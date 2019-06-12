@@ -1,0 +1,46 @@
+<html>
+<title>Tarea #3 </title>
+<body>
+	<h1>Formulario De inscripcion Tarea3</h1>
+	Nombre Usuario: <input type="text" id="usuario" name="usuario" placeholder="Digite el nombre"><br><br>
+
+	Contraseña: <input type="password" id="pass" name="password" placeholder="Digite la contrasena "><br><br>
+
+	Correo: <input type="email" id="email" name="email" placeholder="Correo eletronico"><br><br>
+
+	Fecha de Nacimiento: <input type="date" id="fecha" name="nacimiento"><br><br>
+
+	Oculto: <input type="hidden" name ="Oculto">
+	<br><br><br>
+	<input type="button" value="Guardar" onclick="Validar()">
+	
+</body>
+
+<script>
+function Validar(){
+var vusuario = document.getElementById("usuario").value;
+var expr = /^[a-zA-Z]{1,15}[.]{1,1}[a-zA-Z]{1,15}$/;
+if (vusuario == ""){
+	alert("Es un campo obligatorio")
+	return false
+}
+else if (!expr_usu1.test(vusuario)){
+	alert("El usuario " + vusuario + " no es valido");
+	return false;
+}
+var vcontra = document.getElementById("password").value;
+var econ = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,30}$/;
+if (!expr_con1.test(vcontra)){
+	alert("No poseer los requerimientos requeridos");
+	return false;
+}
+var correo = document.getElementById("correo").value;
+var expr_correo = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+if (!expr_correo.test(correo)){
+	alert("No cumple con los requerimientos requeridos");
+	return false;
+}
+}
+</script>
+
+</html>
